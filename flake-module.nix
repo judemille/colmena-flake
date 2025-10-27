@@ -73,7 +73,7 @@
             nodeNixpkgs = builtins.mapAttrs (
               _: value:
               import inputs.nixpkgs {
-                system = value.config.nixpkgs.hostPlatform;
+                system = value.config.nixpkgs.hostPlatform.system;
                 overlays = [ ];
               }
             ) self.nixosConfigurations;
